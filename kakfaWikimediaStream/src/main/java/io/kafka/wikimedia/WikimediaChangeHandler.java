@@ -31,6 +31,7 @@ public class WikimediaChangeHandler implements EventHandler {
 
     @Override
     public void onMessage(String event, MessageEvent messageEvent) throws Exception {
+        log.info(messageEvent.getData());
         //async
             producer.send(new ProducerRecord<>(topic, messageEvent.getData()));
     }

@@ -21,6 +21,16 @@ public class WikimediaChangesProducer {
         props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
+
+        // Linger up to 100 ms before sending batch if size not met
+        props.put(ProducerConfig.LINGER_MS_CONFIG, "20");
+
+        // Batch up to 64K buffer sizes.
+        props.put(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(1024 * 32));
+
+
+        // Use Snappy compression for batch compression.
+        props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
         // create the producers
         KafkaProducer<String,String> producer = new KafkaProducer<String,String>(props);
 
