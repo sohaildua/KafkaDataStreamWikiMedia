@@ -21,7 +21,7 @@ public class WikimediaChangesProducer {
         props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
-        // create the producer
+        // create the producers
         KafkaProducer<String,String> producer = new KafkaProducer<String,String>(props);
 
         String topic = "wikimedia.recentchange";
