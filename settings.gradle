@@ -1,3 +1,4 @@
 rootProject.name = 'kafka-wikimedii'
 include 'kakfaWikimediaStream'
+include 'KafkaWikimediaConsumerWithOpenSearch'
 
