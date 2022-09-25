@@ -20,12 +20,12 @@ public class WikimediaChangeHandler implements EventHandler {
     }
 
     @Override
-    public void onOpen() throws Exception {
+    public void onOpen() {
         // no methode
     }
 
     @Override
-    public void onClosed() throws Exception {
+    public void onClosed() {
         producer.close();
     }
 
@@ -37,7 +37,7 @@ public class WikimediaChangeHandler implements EventHandler {
     }
 
     @Override
-    public void onComment(String comment) throws Exception {
+    public void onComment(String comment) {
             // nothing here
     }
 
