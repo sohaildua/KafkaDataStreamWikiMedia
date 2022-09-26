@@ -7,7 +7,6 @@
     <list default="true" id="f2bc28a3-c6d1-4075-ac15-f47eaba8ad0a" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KafkaWikimediaConsumerWithOpenSearch/src/main/java/io/kafka/opensearch/OpenSearchWikimediaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/KafkaWikimediaConsumerWithOpenSearch/src/main/java/io/kafka/opensearch/OpenSearchWikimediaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kakfaWikimediaStream/src/main/java/io/kafka/wikimedia/WikimediaChangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/kakfaWikimediaStream/src/main/java/io/kafka/wikimedia/WikimediaChangeHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,8 @@
       <updated>1663871632705</updated>
       <workItem from="1663871636782" duration="5532000" />
       <workItem from="1663973559407" duration="1044000" />
-      <workItem from="1664062475890" duration="3661000" />
+      <workItem from="1664062475890" duration="3722000" />
+      <workItem from="1664225998368" duration="2561000" />
     </task>
     <task id="LOCAL-00001" summary="Producer with wikimedia real time data">
       <created>1663878706609</created>
