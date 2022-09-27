@@ -7,7 +7,6 @@
     <list default="true" id="f2bc28a3-c6d1-4075-ac15-f47eaba8ad0a" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KafkaWikimediaConsumerWithOpenSearch/src/main/java/io/kafka/opensearch/OpenSearchWikimediaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/KafkaWikimediaConsumerWithOpenSearch/src/main/java/io/kafka/opensearch/OpenSearchWikimediaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kakfaWikimediaStream/src/main/java/io/kafka/wikimedia/WikimediaChangesProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/kakfaWikimediaStream/src/main/java/io/kafka/wikimedia/WikimediaChangesProducer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,17 +59,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "11",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="OpenSearchWikimediaConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.kafka.opensearch.OpenSearchWikimediaConsumer" />
@@ -102,7 +101,8 @@
       <workItem from="1663871636782" duration="5532000" />
       <workItem from="1663973559407" duration="1044000" />
       <workItem from="1664062475890" duration="3722000" />
-      <workItem from="1664225998368" duration="7783000" />
+      <workItem from="1664225998368" duration="8057000" />
+      <workItem from="1664293474842" duration="4625000" />
     </task>
     <task id="LOCAL-00001" summary="Producer with wikimedia real time data">
       <created>1663878706609</created>

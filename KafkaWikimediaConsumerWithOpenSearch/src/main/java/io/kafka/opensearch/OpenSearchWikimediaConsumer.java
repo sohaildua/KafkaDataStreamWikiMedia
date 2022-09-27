@@ -12,6 +12,8 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.opensearch.action.bulk.BulkRequest;
+import org.opensearch.action.bulk.BulkResponse;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
 import org.opensearch.client.RequestOptions;
@@ -79,6 +81,7 @@ public class OpenSearchWikimediaConsumer {
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
+        properties.setProperty(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
 
 
         // create consumer
@@ -130,19 +133,35 @@ public class OpenSearchWikimediaConsumer {
             int recordCount = records.count();
             log.info("Received"+ recordCount+"recorders");
 
+            BulkRequest bulkRequest = new BulkRequest();
             for(ConsumerRecord<String,String> record: records){
 
-
+                String id = record.topic() + "_"+ record.partition()+"_" + record.offset();
              try{
                  IndexRequest indexRequest = new IndexRequest("wikimedia")
-                         .source(record.value(), XContentType.JSON);
-                 IndexResponse response =openSearchClient.index(indexRequest,RequestOptions.DEFAULT);
-                 log.info(response .getId()+ "data is inserting 1 record");
+                         .source(record.value(), XContentType.JSON).id(id);
+                // IndexResponse response =openSearchClient.index(indexRequest,RequestOptions.DEFAULT);
+                 bulkRequest.add(indexRequest);
+                // log.info(response .getId()+ "data is inserting 1 record");
              }
              catch (Exception e){
 
              }
             }
+            if(bulkRequest.numberOfActions()>0){
+            BulkResponse bulkresponse = openSearchClient.bulk(bulkRequest,RequestOptions.DEFAULT);
+            // commit offset after the batch is consumed
+            log.info(bulkresponse.getItems().length + " records inserted");
+            try{
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+                consumer.commitSync();
+                log.info("offset has been committed");
+            }
+
+
 
 
         }}
