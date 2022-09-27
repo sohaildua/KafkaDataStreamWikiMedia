@@ -48,7 +48,7 @@ public class WikimediaChangesProducer {
 
 
         // we produce the data for 10 minutes
-        TimeUnit.MINUTES.sleep(1);
+        TimeUnit.MINUTES.sleep(5);
 
     }
 
